@@ -1,23 +1,11 @@
 {
-  "name": "Windows in Codespaces",
-  // Point to the Docker Compose file that runs the Windows container
-  "dockerComposeFile": [
-    "../compose.yml"
-  ],
-  // Specify which service in the compose file is the main one for the dev container
-  "service": "windows",
-  "workspaceFolder": "/workspace",
+    "name": "Windows",
+    "dockerComposeFile": "compose.yml",
+    "service": "windows",
+    // This is the line we're changing. 
+    // We're pointing to a real workspace folder instead of /dev/null
+    "workspaceFolder": "/workspace",
 
-  // Forward the port that streams the Windows GUI. 8006 is the default for VNC web client.
-  "forwardPorts": [8006],
-  // When the port is forwarded, open it in the browser automatically.
-  "onAutoForward": "openBrowser",
-
-  // Use a more powerful machine type for better performance.
-  // Note: This may increase Codespace costs. You can change or remove this.
-  "hostRequirements": {
-    "cpus": 4,
-    "memory": "8gb",
-    "storage": "32gb"
-  }
+    "forwardPorts": [8006],
+    "onAutoForward": "openBrowser"
 }
